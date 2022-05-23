@@ -10,11 +10,30 @@ using System.Windows.Forms;
 
 namespace Practices_of_Applications
 {
-    public partial class Form1 : Form
+    public partial class FrmStudentLogin : Form
     {
-        public Form1()
+        public FrmStudentLogin()
         {
             InitializeComponent();
+        }
+
+        private void BtnLogin_Click(object sender, EventArgs e)
+        {
+            FrmStudentPanel FR = new FrmStudentPanel();
+            FR.number = MskStudentNumber.Text;
+            FR.Show();
+            this.Hide();
+            
+        }
+
+        private void MskStudentNumber_TextChanged(object sender, EventArgs e)
+        {
+            if (MskStudentNumber.Text == "1111")
+            {
+                FrmTeacherPanel FR = new FrmTeacherPanel();
+                FR.Show();
+                this.Hide();
+            }
         }
     }
 }
